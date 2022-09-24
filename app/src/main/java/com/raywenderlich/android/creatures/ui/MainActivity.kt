@@ -32,8 +32,6 @@ package com.raywenderlich.android.creatures.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.raywenderlich.android.creatures.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -45,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupNavigation()
-        setupViewPager()
+        // setupViewPager()
     }
 
     private fun setupNavigation() {
@@ -69,17 +67,26 @@ class MainActivity : AppCompatActivity() {
             false
         }
 
-    private fun setupViewPager() {
-        viewPager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
-            override fun getItem(position: Int): Fragment? {
-                when (position) {
-                    0 -> return AllFragment.newInstance()
-                    1 -> return FavoritesFragment.newInstance()
-                }
-                return null
-            }
+//    private fun setupViewPager() {
+//
+//        viewPager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
+//
+//            // getItem()
+//            override fun getItem(position: Int): Fragment? {
+//
+//                when (position) {
+//                    0 -> return AllFragment.newInstance()
+//                    1 -> return FavoritesFragment.newInstance()
+//                }
+//
+//                return null
+//            }
+//
+//            // getCount()
+//            override fun getCount() = 2
+//
+//        }
+//
+//    }
 
-            override fun getCount() = 2
-        }
-    }
 }
